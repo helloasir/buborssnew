@@ -2,9 +2,6 @@ body {
   font-family: system-ui;
   font-size: 18px;
 }
-
-
-
 details:focus,
 details:focus-within,
 details:hover {
