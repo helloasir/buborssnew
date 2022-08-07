@@ -1,14 +1,20 @@
 {
-  "Web Development": [
-    "https://hacks.mozilla.org/feed/"    
+  "Forex News": [
+    "https://rss.dailyfx.com/feeds/forex_market_news",
+    "https://www.liteforex.com/rss-smm/trading/forex-news/",
+    "https://www.ofx.com/en-au/forex-news/daily-and-weekly-market-news-feed/" 
 
   ],
-  "Blogs": [
-    "https://george.mand.is/feed.xml"
+  "World News": [
+    "https://news.yahoo.com/rss/mostviewed",
+    "http://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+    "https://in.investing.com/rss/market_overview_Technical.rss"
 
   ],
-  "My GitHub Projects": [
-    "https://github.com/georgemandis.atom"
+  "Technical News": [
+    "https://rss.dailyfx.com/feeds/technical_analysis",
+    "https://www.forexlive.com/feed/technicalanalysis"
+    
  
   ]
 }

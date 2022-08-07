@@ -5,9 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Forex RSS News Reader</title>
-    <link rel="stylesheet" href="/custom.css">
     <link rel="stylesheet" href="/style.css" />
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <style>
+
+* { margin: 0; padding: 0; line-height: 1.5; }
+html { background: #f4f7fb; background: radial-gradient(circle, rgba(208,230,237,.2) 0%, rgba(208,230,237,0.6) 100%); }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 13px;
+  font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 { font-weight: bold; font-family: 'Bitter', serif; font-weight: 700;}
+a { color: rgba(61, 81, 118, 0.9); color: rgba(53, 119, 190, 0.9)}
+  a:hover, a:active { color: #f60; }
+.date { font-style: italic; }
+.subhead { font-size: 1em; padding: .5em 0 0 0;}
+
+ul { list-style-type: none; margin: 1em 0;  }
+li { margin-bottom: .75em; }
+  li p, li h2 { margin: 0;/* border: 1px solid red; */}
+header, footer { padding: 20px 5%; margin: 0 0 1em; color: #666; }
+  header h1 { font-weight: normal;  font-size: 3em; float: left; margin: 0 .5em 0 0;}
+  header h1 a { color: rgba(108,130,137,1); text-decoration: none; }
+h2 {  color: #bbb; font-size: 1.3em; font-weight: normal; line-height: .9em; display: inline-block}
+  h2 a { text-decoration: none; }
+#content {     margin: 0 5%; width: 90%;   }
+.col1, .col2 { width: 48%; float: left; margin: 0; } .col2 { margin: 0 0 0 1.5%;}
+article { background: #fff; width: 95%; margin: 0 0 1em; padding: 2.5%;  }
+footer { clear: both; padding-top: 0; }
+
+@media screen and (max-width: 600px) {
+  .col1, .col2 { width: 100%; float: none; margin: 0; } .col2 { margin: 0;}
+  #content { width: 95%; margin: 0 2%; }
+  header, footer { padding: 20px 2%;  }
+  header h1 { float: none; margin: 0;}
+}
+
+@media (prefers-color-scheme: dark) {
+  html { background: #242527; color: #F4F7FB; }
+  article { background: #36383B; }
+  header { color: rgba(108,130,137,1); }
+  footer { color: rgba(108,130,137,1); }
+  a { color: rgba(114, 168, 226, 0.9)}
+}
+@font-face {
+  font-family: 'icomoon';
+  src:  url('f/icomoon.woff?ttnhzl') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"], .mac, .ios {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  opacity: .77;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mac:before { content: "\e956"; }  
+.ios:before { content: "\e958"; }  
+    </style>
   </head>
   <body id="home">
     <header class="container">
@@ -15,11 +82,11 @@
       <p class="subhead">A collection of open and indie Mac, iOS, and web apps that help promote the open web. <span class="date">Updated 18 December 2021</span></p>
       <p>Submit any new links and issues on <a href="https://github.com/good/openweb">this project at GitHub</a></p>
     </header>
-    <div class="container">
-    
+    <div class="container" id="content">
+      <section class="col1">
 
     {% for group, feeds in data %}
-    <h2>{{ group }}</h2>
+    <h1 id="rss">{{ group }}</h1>
     {% for feed in feeds %}
     <details>
       <summary>
@@ -49,10 +116,14 @@
       {% endfor %}
     </ul>
     {% endif %}
+  </section>
+  <section class="col2">
+   
+  </section>
 
   </div>
 
-<div class="container" >
+  <footer>
     <br />
     <hr />
     <p>Last updated {{ now }}.</p>
@@ -62,6 +133,6 @@
         >Bubo Reader (v{{ info.version }})</a
       >, a project by <a href="https://instagram.com/helloasir">Hello Asir</a>. ❤️
       <a href="{{ info.funding.url }}">Sponsor on GitHub</a>
-    </p></div>
+    </p></footer>
   </body>
 </html>
