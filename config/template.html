@@ -103,6 +103,9 @@ footer { clear: both; padding-top: 0; }
         <span class="feed-url">({{ feed.feed }})</span>
         <br/>
         <span class="feed-url">({{ feed.title }})</span>
+        <div class="feed-timestamp">
+                  <small>Latest: <%= feed.items[0].timestamp %></small>
+                </div>
       </summary>
       <ul>
         {% for item in feed.items %}
