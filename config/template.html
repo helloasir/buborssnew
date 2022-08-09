@@ -97,7 +97,7 @@ footer { clear: both; padding-top: 0; }
     <h1 id="rss">{{ group }}</h1>
     {% for feed in feeds %}
     <details>
-      <summary>
+<!--       <summary>
         <span class="feed-title">{{ feed.title }}</span>
         <br/>
         <span class="feed-url">({{ feed.feed }})</span>
@@ -106,7 +106,7 @@ footer { clear: both; padding-top: 0; }
         <div class="feed-timestamp">
                   <small>Latest: ({{ feed.items[0].timestamp }})</small>
                 </div>
-      </summary>
+      </summary> -->
       <ul>
         {% for item in feed.items %}
         <li>
