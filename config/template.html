@@ -96,7 +96,7 @@ footer { clear: both; padding-top: 0; }
     {% for group, feeds in data %}
     <h1 id="rss">{{ group }}</h1>
     {% for feed in feeds %}
-    <details>
+<!--     <details> -->
 <!--       <summary>
         <span class="feed-title">{{ feed.title }}</span>
         <br/>
@@ -120,7 +120,7 @@ footer { clear: both; padding-top: 0; }
         </li>
         {% endfor %}
       </ul>
-    </details>
+<!--     </details> -->
     {% endfor %} {% endfor %} {% if errors | length > 0 %}
     <h2>Errors</h2>
     <p>There were errors trying to parse these feeds:</p>
